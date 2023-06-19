@@ -1,11 +1,10 @@
 "use strict";
 
 if (4 == 9) {
-    console.log('Ok');
+    console.log('Ok!');
 } else {
-    console.log('error');
+    console.log('Not!');
 }
-
 
 
 
@@ -23,18 +22,13 @@ if (4 == 9) {
 
 const num = 50;
 
-switch (num) {
-    case 49:
-        console.log('No!');
-        break;
-    case 100:
-        console.log('No2!');
-        break;
-    case 50:
-        console.log('Ok!');
-        break;
-    default:
-        console.log('Oh? no!');
-        break;
-
+if (num < 49) {
+    console.log('Error');
+} else if (num > 100) {
+    console.log('More');
+} else {
+    console.log('Ok!');
 }
+
+// С помощью тернарного оператора
+(num === 50) ? console.log('Ok!'): console.log('Error!');
