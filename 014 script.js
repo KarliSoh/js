@@ -20,7 +20,7 @@ if (4 == 9) {
 // (num === 50) ? console.log('Ok!'): console.log('Erroe');
 
 
-const num = 50;
+
 
 if (num < 49) {
     console.log('Error');
@@ -32,3 +32,19 @@ if (num < 49) {
 
 // С помощью тернарного оператора
 (num === 50) ? console.log('Ok!'): console.log('Error!');
+
+
+const num = 100;
+
+switch (num) {
+    case 49:
+        console.log('Error!');
+        break;
+    case 100:
+        console.log('Oh, no');
+        break;
+    default:
+        console.log('Ok!');
+        break;
+
+};
