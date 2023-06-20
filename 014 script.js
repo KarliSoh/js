@@ -105,3 +105,29 @@ console.log(johnReport || alexReport || samReport || mariaReport);
 
 
 console.log(!0);
+
+
+
+// Циклы 
+
+let num1 = 50;
+
+// while (num1 <= 55) {
+//     console.log(num1);
+//     num1++;
+// }
+
+// do {
+//     console.log(num1);
+//     num1++;
+// }
+// while (num1 < 55);
+
+for (let i = 1; i < 10; i++) {
+    if (i === 6) {
+        // break;
+        continue; //пропускает шаг, но не прерывает цикл.
+    }
+    console.log(i);
+
+}
