@@ -131,3 +131,50 @@ for (let i = 1; i < 10; i++) {
     console.log(i);
 
 }
+
+
+
+
+for (let i = 0; i < 3; i++) {
+    console.log(i);
+    for (let j = 0; j < 3; j++) {
+        console.log(j);
+    }
+}
+
+
+
+// *
+// **
+// ***
+// ****
+// *****
+// ******
+
+
+let result = '';
+const length1 = 7;
+
+for (let i = 1; i < length1; i++) {
+
+    for (let j = 0; j < i; j++) {
+        result += "*";
+    }
+
+    result += '\n';
+}
+
+console.log(result);
+
+
+// метка
+first: for (let i = 0; i < 3; i++) {
+    console.log(`First level: ${i}`);
+    for (let j = 0; j < 3; j++) {
+        console.log(`Secondlevel: ${j}`);
+        for (let k = 0; k < 5; k++) {
+            if (k === 2) break first;
+            console.log(`Third level: ${k}`);
+        }
+    }
+}
