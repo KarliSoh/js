@@ -173,7 +173,7 @@ first: for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
         console.log(`Secondlevel: ${j}`);
         for (let k = 0; k < 5; k++) {
-            if (k === 2) break first;
+            // if (k === 2) continue first;
             console.log(`Third level: ${k}`);
         }
     }
