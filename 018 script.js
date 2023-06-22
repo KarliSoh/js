@@ -49,12 +49,7 @@ const personalMovieDB = {
 
 
 
-let lili = 2;
 
-
-while (lili) {
-
-}
 
 for (let i = 0; i < 2; i++) {
     const a = prompt('Один из последних просмотренных фильмов?', ''),
@@ -71,15 +66,6 @@ for (let i = 0; i < 2; i++) {
 
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
