@@ -23,7 +23,7 @@ const userData = {
 };
 
 userData.say();
-userData.hey?.();
+// userData.hey?.();
 
 
 // if (userData && userData.skills && userData.skills.js) {
