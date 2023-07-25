@@ -6,8 +6,8 @@
 
 // console.log(2n === 2);
 
-let bigint = 1n;
+// let bigint = 1n;
 let num = 2;
 
-console.log(bigint + BigInt(num));
-console.log(Number(bigint) + num);
+// console.log(bigint + BigInt(num));
+// console.log(Number(bigint) + num);
