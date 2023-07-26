@@ -1,24 +1,13 @@
-const shops = [{
-        rice: 500
-    },
-    {
-        oil: 200
-    },
-    {
-        bread: 100
-    }
-];
+function crateElement() {
+    const div = document.createElement('div');
+    div.id = 'test';
+    document.body.append(crateElement);
+}
 
-const budget = [5000, 15000, 25000];
+crateElement();
 
-const map = new Map();
+function deleteElement() {
+    document.body.removeChild(document.getElementById('test'));
+}
 
-shops.forEach((shop, i) => {
-    map.set(shop, budget[i]);
-});
-
-// map.set(shops[0], 5000)
-//     .set(shops[1], 15000)
-//     .set(shops[2], 6000);
-
-console.log(map);
+deleteElement();
