@@ -8,9 +8,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function hideTabContent() {
         tabsContent.forEach(item => {
-            item.style.display = 'none';
-            // item.classList.add('hide');
-            // item.classList.remove('show', 'fade');
+            // item.style.display = 'none';
+            item.classList.add('hide');
+            item.classList.remove('show', 'fade');
         });
 
         tabs.forEach(item => {
@@ -19,9 +19,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function showTabContent(i = 0) {
-        tabsContent[i].style.display = 'block';
-        // tabsContent[i].classList.add('show', 'fade');
-        // tabsContent[i].classList.remove('hide');
+        // tabsContent[i].style.display = 'block';
+        tabsContent[i].classList.add('show', 'fade');
+        tabsContent[i].classList.remove('hide');
         tabs[i].classList.add('tabheader__item_active');
     }
 
@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Timer
 
-    const dedline = '2023-08-02';
+    const dedline = '2023-08-15';
 
     function getTimerRemaining(endtime) {
         // let days, hours, minutes, seconds;
@@ -110,4 +110,56 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.timer', dedline);
+
+    //Modal
+
+    const modalTriger = document.querySelectorAll('[data-modal]'),
+        modal = document.querySelector('.modal'),
+        modalCloseBtn = document.querySelector('[data-close]');
+
+    function openModal() {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+        // modal.classList.toggle('show'); // 2-й способ
+        document.body.style.overflow = 'hidden';
+        clearInterval(modalTimerId); // если пользов. сам откр мод окно, то не будет больше откр
+    }
+
+    modalTriger.forEach(btn => {
+        btn.addEventListener('click', openModal);
+    });
+
+
+
+    function closeModal() {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+        // modal.classList.toggle('show'); // 2-й способ
+        document.body.style.overflow = '';
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "Escape" && modal.classList.contains('show')) {
+            closeModal();
+        }
+    }); // закр модальное окно при помощи клавиш
+
+    const modalTimerId = setTimeout(openModal, 5000);
+
+    function showModalByScroll() {
+        if (window.scrollY + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
+            openModal();
+            window.removeEventListener('scroll', showModalByScroll); // удаляем после прокрутки и показа мод окна
+        }
+    }
+
+    window.addEventListener('scroll', showModalByScroll);
 });
