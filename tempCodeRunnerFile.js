@@ -1,13 +1,17 @@
-function crateElement() {
-    const div = document.createElement('div');
-    div.id = 'test';
-    document.body.append(crateElement);
+function User(name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+    this.hello = function () {
+        console.log(`Hello ${this.name}`);
+    };
 }
 
-crateElement();
+User.prototype.exit = function () {
+    console.log(`Пользователь ${this.name} ушел`);
+};
 
-function deleteElement() {
-    document.body.removeChild(document.getElementById('test'));
-}
+const ivan = new User('Ivan', 20);
+const alex = new User('Alex', 23);
 
-deleteElement();
+ivan.exit();
