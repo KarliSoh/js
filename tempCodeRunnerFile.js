@@ -1,17 +1,28 @@
-function User(name, id) {
-    this.name = name;
-    this.id = id;
-    this.human = true;
-    this.hello = function () {
-        console.log(`Hello ${this.name}`);
-    };
+class Rectangl {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+
+    calcArea() {
+        return this.height * this.width;
+    }
 }
 
-User.prototype.exit = function () {
-    console.log(`Пользователь ${this.name} ушел`);
-};
+class ColoredRectanglWithText extends Rectangl {
+    constructor(height, width, text, bgColor) {
+        super(height, width); //всегда идет первой строчкой
+        this.text = text;
+        this.bgColor = bgColor;
 
-const ivan = new User('Ivan', 20);
-const alex = new User('Alex', 23);
+    }
+    showMyPops() {
+        console.log(`Текст: ${this.text}, цвет: ${this.bgColor}`);
+    }
 
-ivan.exit();
+}
+
+const div = new ColoredRectanglWithText(25, 10, 'Hello World', 'red');
+
+div.showMyPops();
+console.log(div.calcArea());

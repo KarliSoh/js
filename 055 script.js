@@ -9,19 +9,19 @@ function User(name, id) {
     };
 }
 
-class User {
-    constructor(name, id) {
-        this.name = name;
-        this.id = id;
-        this.human = true;
-    }
-    hello() {
-        console.log(`Hello ${this.name}`);
-    }
-    exit() {
-        console.log(`Пользователь ${this.name} ушел`);
-    }
-}
+// class User {
+//     constructor(name, id) {
+//         this.name = name;
+//         this.id = id;
+//         this.human = true;
+//     }
+//     hello() {
+//         console.log(`Hello ${this.name}`);
+//     }
+//     exit() {
+//         console.log(`Пользователь ${this.name} ушел`);
+//     }
+// }
 
 User.prototype.exit = function () { // доб объекты к констр
     console.log(`Пользователь ${this.name} ушел`);
