@@ -1,3 +1,5 @@
+'use strict';
+
 const person = {
     name: 'Alex',
     tel: '+37529885144',
