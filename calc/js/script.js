@@ -8,7 +8,7 @@ inputRub.addEventListener('input', () => {
 
     request.open('GET', 'js/current.json');
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    request.send();
+    console.log(request.send());
 
     // request.addEventListener('readystatechange', () => {
     //     if (request.readyState === 4 && request.status === 200) {
