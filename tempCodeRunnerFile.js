@@ -1,16 +1,25 @@
-const person = {
-    name: 'Alex',
-    tel: '+37529885144',
-    parents: {
-        mom: 'Olga',
-        dad: 'Mike'
-    }
-};
+'use strict';
 
-const clone = JSON.parse(JSON.stringify(person));
-clone.parents.mom = 'Ann';
+console.log('Запрос данных...'); // синхр код
 
-// console.log(JSON.parse(JSON.stringify(person)));
+//promis
+// resolve - выплнилось правильно
+// reject - не выполнильсь и что-то пошло не так
 
-console.log(person);
-console.log(clone);
+const req = new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        console.log('Подготовка данных...');
+
+        const product = {
+            name: 'TV',
+            price: 2000
+        };
+
+        resolve();
+
+    }, 2000);
+});
+
+req.then(() => {
+    console.log('Данные получены');
+});
